@@ -60,7 +60,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Urban Thematic Exploitation Platform\\Software Configuration File'
+project = u'Urban Thematic Exploitation Platform - Software Configuration File'
 copyright = u'2016, TEP Urban Consortium'
 author = u'Emmanuel Mathot (T2)\\Martin Boettcher (BC)\\Stepan Kuchar (IT4I)\\Julian Zeidler (DLR)'
 
@@ -271,7 +271,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'TEPUrban_TD_DDF-SCF.tex', u'Urban Thematic Exploitation Platform\\Software Configuration File',
+    (master_doc, 'TEPUrban_TD_DDF-SCF.tex', u'Urban Thematic Exploitation Platform - Software Configuration File',
      r'Emmanuel Mathot (T2)\\Martin Boettcher (BC)\\Stepan Kuchar (IT4I)\\Jakub Balhar (GISAT)', 'manual'),
 ]
 
