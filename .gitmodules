@@ -1,0 +1,3 @@
+[submodule "source/external/t2api"]
+	path = source/external/t2api
+	url = git@github.com:Terradue/api.git
