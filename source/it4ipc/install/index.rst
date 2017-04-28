@@ -46,7 +46,7 @@ HTTP handler used as a proxy for the WPS services. It is used to parse the REMOT
   
 2. Deployment
    
-	Deploy the UtepHandler to a Web Server (Apache/IIS)
+	Deploy the UtepHandler to a Web Server (IIS)
    
 3. Proxy configuration
 
@@ -57,7 +57,28 @@ The UtepHandler will log all incoming requests and forward the portal requests t
 UtepDevEnv
 ----------
 
-TODO
+WCF service used for the Development Environment use case. Web service contains two methods, one for user authentication (AuthenticateUser) and one for user processor package upload (BundleUpload).
+
+1. *DevEnvService.svc.cs* configuration
+
+	* haasUtil - connection string for the HPC as a Service Middleware database used for user authentication (@"Server=<serverName>;Database=<databaseName>;User Id=<login>;Password=<password>;")
+  
+2. *Web.config* configuration
+
+	Change the URI of the deployment server.
+
+	.. code-block:: xml
+    
+		<service name="UtepDevEnv.DevEnvService" behaviorConfiguration="myServiceBehave">
+			<endpoint address="https://<serverName>/DevEnv/DevEnvService.svc" binding="webHttpBinding" bindingConfiguration="webHttp" behaviorConfiguration="defaultEndpointBehavior" contract="UtepDevEnv.IDevEnvService" />
+			<endpoint address="mex" binding="mexHttpsBinding" contract="IMetadataExchange" />
+		</service>
+  
+2. Deployment
+   
+	Deploy the UtepDevEnv service to a Web Server (IIS)
+   
+UtepDevEnv service will now process the requests sent from upload-it4i.sh script located in the Development Environment VM.
 
 DirectorySizeChecker
 --------------------
