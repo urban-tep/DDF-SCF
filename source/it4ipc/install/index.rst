@@ -32,6 +32,8 @@ Internal middleware API implementation to provide access to the Salomon cluster.
 Internal Software
 =================
 
+Internal software source codes are available from https://github.com/It4innovations/urban-tep repository.
+
 UtepHandler
 -----------
 
