@@ -35,9 +35,24 @@ Internal Software
 UtepHandler
 -----------
 
-HTTP handler used as a proxy for the WPS services.
+HTTP handler used as a proxy for the WPS services. It is used to parse the REMOTE_USER header from the HTTP request to authenticate the user in the processing center.
 
-TODO
+1. Configuration *UtepHandler.asxh*
+
+	* haasUtil - connection string for the HPC as a Service Middleware database (@"Server=<serverName>;Database=<databaseName>;User Id=<login>;Password=<password>;")
+	* handlerName - URI of the deployed handler used for geoserver requests ("utep.it4i.cz/UtepHandler/UtepHandler.ashx/geoserver")
+	* geoserverName - URI of the geoserver instance ("<serverName>.it4i.cz:8081/geoserver")
+	* proxyName - URI of the proxy used for geoserver requests ("utep.it4i.cz/geoserver")
+  
+2. Deployment
+   
+	Deploy the UtepHandler to a Web Server (Apache/IIS)
+   
+3. Proxy configuration
+
+	Configure proxy in a way, that the requests for the Geoserver proxy "utep.it4i.cz/geoserver" are forwarded to the URI of the deployed UtepHandler.
+
+The UtepHandler will log all incoming requests and forward the portal requests to the geoserver. 
 
 UtepDevEnv
 ----------
