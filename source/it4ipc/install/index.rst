@@ -83,9 +83,40 @@ UtepDevEnv service will now process the requests sent from upload-it4i.sh script
 DirectorySizeChecker
 --------------------
 
-TODO
+Application used for the Caching use case. It will check the sum size of the user's output folder and if the size is greater than the defined quota, the old results will be automatically deleted.
+
+1. *App.config* configuration
+
+	Change the *mainDirectoryPath* for the results folder, *defaultMaximalSizeMB* for the default quota for all users or add *<result ... />* for a specific users with the specific quota requirements.
+
+	.. code-block:: xml
+    
+		<applicationConfiguration>
+			<results mainDirectoryPath="C:\inetpub\wwwroot\results" defaultMaximalSizeMB="100">
+				<result userName="svat_va" maximalSizeMB="150" />
+			</results>
+		</applicationConfiguration>
+		
+2. Deployment
+
+	The application is deployed in a Task Scheduler to be automatically invoked every 15 minutes indefinitely. 
 
 BulkProcessing
 --------------
 
-TODO
+Application used for the bulk processing use case. It will check the specific folder for the new data package upload. The WPS request is automatically generated for each new data upload.
+
+1. *App.config* configuration
+
+	Change the *geoServerWPSUrl* for the proxy URI used for the geoserver requests, *mainDirectoryPath* for the data repository directory.
+
+	.. code-block:: xml
+    
+		<applicationConfiguration>
+			<bulkProcess geoServerWPSUrl="http://utep.it4i.cz/geoserver/ows?service=WPS" mainDirectoryPath="C:\UtepApps\BulkProcessingRepository" modifiedDateMinutes="5">
+			</bulkProcess>
+		</applicationConfiguration>
+		
+2. Deployment
+
+	The application is deployed in a Task Scheduler to be automatically invoked every 15 minutes indefinitely. 
