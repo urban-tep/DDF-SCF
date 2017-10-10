@@ -2,8 +2,7 @@ Deployment Plan
 ###############
 
 .. uml::
-
-	:cpation: Portal and Data Agency deployment diagram
+	:caption: Portal and Data Agency deployment diagram
 
 	skinparam component {
 	    BackgroundColor<<tep>> RosyBrown
@@ -48,23 +47,5 @@ Deployment Plan
 	}
 
 	() "https://urban-tep.eo.esa.int/" -- it4ifw : HTTPS
-	() "https://data.terradue.com/" -- t2fw : HTTPS
+	() "https://catalog.terradue.com/" -- t2fw : HTTPS
 
-
-
-.. req:: TS-FUN-120
-	:show:
-
-	The deployment diagram of this section shows how the Catalogue service is deployed on the Terradue Cloud platform
-
-
-.. req:: TS-SEC-050
-	:show:
-
-	The deployment diagram of this section shows that all access to web interfaces are through HTTPS with a certificate
-
-
-.. req:: TS-REU-010 
-	:show:
-
-	The deployment diagram shows that we reuse the Terradue Cloud Platform catalogue as a service already deployed

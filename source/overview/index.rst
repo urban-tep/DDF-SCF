@@ -9,6 +9,10 @@ Overview
    references
 
 
+
+Introduction
+""""""""""""
+
 This Urban TEP Sofware Configuration File describes the build and installation of the different Urban TEP subsystems. Each component is autonomous and can be configured stand-alone independently of the infrastructure. For the interface items exchanged and the protocol used between the subsystems, see the :ref:`ICD/API in [RD8] <RD8>`. The configuration described in this plan are specific to Urban TEP operational platform.
 
 This SCF assumes that readers are familiary with the :ref:`SDD in [RD8] <RD8>`. Please refer to the SDD for the context of the interface information.
